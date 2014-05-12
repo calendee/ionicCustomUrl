@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="starter">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
@@ -21,15 +21,16 @@
     <!-- your app's js -->
     <script src="js/app.js"></script>
   </head>
-  <body ng-app="starter" ng-controller="MainController">
+  <body ng-controller="MainController">
 
     <ion-pane>
       <ion-header-bar class="bar-stable">
         <h1 class="title">Custom URL</h1>
-        <h2 class="padding">Has Launched : {{test.hasLaunched}}</h2>
       </ion-header-bar>
-      <ion-content>
+      <ion-content class="padding">
+        <p >Has Launched : {{data.launched}}</p>
       </ion-content>
     </ion-pane>
+    
   </body>
 </html>

@@ -1,8 +1,3 @@
-// Ionic Starter App
-
-// angular.module is a global place for creating, registering and retrieving Angular modules
-// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
-// the 2nd parameter is an array of 'requires'
 angular.module('starter', ['ionic'])
 
 .run(function($ionicPlatform) {
@@ -12,3 +7,27 @@ angular.module('starter', ['ionic'])
     }
   });
 })
+
+.controller("MainController", [ '$scope', function($scope) {
+
+	$scope.data = {
+		"launched" : "No"
+	};
+
+	$scope.reportAppLaunched = function() {
+		console.log("App Launched Via Custom URL");
+
+		$scope.$apply( function() {
+			$scope.data.launched = "Yes";
+		});
+	}
+
+}]);
+
+function handleOpenURL(url) {
+
+    var body = document.getElementsByTagName("body")[0];
+    var mainController = angular.element(body).scope();
+    mainController.reportAppLaunched(url);
+
+}
